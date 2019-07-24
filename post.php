@@ -13,6 +13,11 @@
 <li><?php $this->category(','); ?></li>
 <li><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('暂无评论', '%d 条评论'); ?></a></li>
 <li><?php Postviews($this); ?></li>
+<li>
+<?php $currGroup = get_object_vars($this->user) ['row']['group'];if ($currGroup == "administrator"): ?>
+<a href="<?php $this->options->adminUrl('write-post.php?cid=' . $this->cid ); ?>" target="_blank">修改</a>
+<?php endif; ?>
+</li>
 </ul>
 <div class="post-content">
 <?php $this->content(); ?>
