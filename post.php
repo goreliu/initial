@@ -15,7 +15,7 @@
 <li><?php Postviews($this); ?></li>
 <li>
 <?php $currGroup = get_object_vars($this->user) ['row']['group'];if ($currGroup == "administrator"): ?>
-<a href="<?php $this->options->adminUrl('write-post.php?cid=' . $this->cid ); ?>" target="_blank">修改</a>
+<a href="<?php $this->options->adminUrl('write-post.php?cid=' . $this->cid ); ?>" target="_blank">编辑</a>
 <?php endif; ?>
 </li>
 </ul>
