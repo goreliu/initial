@@ -1,0 +1,18 @@
+分类变成树形：
+
+diff --git a/sidebar.php b/sidebar.php
+index 6083927..2c9fe4f 100644
+--- a/sidebar.php
++++ b/sidebar.php
+@@ -38,10 +38,7 @@
+ <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)): ?>
+ <section class="widget">
+ <h3 class="widget-title">分类</h3>
+-<ul class="widget-tile">
+-<?php $this->widget('Widget_Metas_Category_List')
+-->parse('<li><a href="{permalink}">{name}</a></li>'); ?>
+-</ul>
++<?php $this->widget('Widget_Metas_Category_List')->listCategories('wrapClass=widget-list'); ?>
+ </section>
+ <?php endif; ?>
+ <?php if (!empty($this->options->sidebarBlock) && in_array('ShowTag', $this->options->sidebarBlock)): ?>
